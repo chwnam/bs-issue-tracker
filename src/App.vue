@@ -1,16 +1,25 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to BS issue tracker"/>
+    <issue-detail v-if="viewDetail" />
+    <issue-list v-else />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// Pages
+import IssueList from './pages/IssueList'
+import IssueDetail from './pages/IssueDetail'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    IssueList,
+    IssueDetail
+  },
+  data() {
+    return {
+      viewDetail : false
+    }
   }
 }
 </script>
