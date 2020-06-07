@@ -1,13 +1,19 @@
 <template>
   <div id="app">
     <issue-detail v-if="viewDetail" />
-    <issue-list v-else />
+    <issue-list 
+      v-else 
+      v-bind:data="issueList" 
+      v-bind:openIssueCount="openIssueCount"
+      v-bind:closeIssueCount="closeIssueCount"
+    />
   </div>
 </template>
 
 <script>
 //Models
 import IssueListModel from './Models/IssueListModel';
+
 // Pages
 import IssueList from './pages/IssueList'
 import IssueDetail from './pages/IssueDetail'
@@ -20,12 +26,16 @@ export default {
   },
   data() {
     return {
-      viewDetail : false
       issueList: [],
+      viewDetail : false,
       openIssueCount: null,
       closeIssueCount: null
     }
-  }
+  },
+  created() {
+    this.IssueListFetch()
+    this.IssueCountFetch()
+  },
   methods: {
     IssueListFetch() {
       IssueListModel.list().then(data => {
