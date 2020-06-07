@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Issue Tracker</title>
+    <title>이슈 트래커 목록 목업</title>
 </head>
 <body>
-<h1>Issue Tracker</h1>
+<h1>이슈 트래커</h1>
 
 <section>
     <button>
@@ -14,7 +14,7 @@
     <button>
         2 Closed
     </button>
-    <button>
+    <button onclick="location.href='issue-edit.html';">
         New Issue
     </button>
 </section>
@@ -24,6 +24,7 @@
     <tr>
         <th>ID</th>
         <th>TITLE</th>
+        <th>Author</th>
         <th>CREATED</th>
         <th>MODIFIED</th>
         <th>STATUS</th>
@@ -35,22 +36,18 @@
             1
         </td>
         <td>
-            TEST
+            <a href="issue-single.html">TEST</a>
         </td>
         <td>
-            <time
-                    datetime="2020-05-25T19:20:20+0900"
-                    title="2020년 05월 25일 오후 7시 20분 20초"
-            >
+            홍길동
+        </td>
+        <td>
+            <time datetime="2020-05-25T19:20:20+0900" title="2020년 05월 25일 오후 7시 20분 20초">
                 23 분전
             </time>
-
         </td>
         <td>
-            <time
-                    datetime="2020-05-25T19:20:20+0900"
-                    title="2020년 05월 25일 오후 7시 20분 20초"
-            >
+            <time datetime="2020-05-25T19:20:20+0900" title="2020년 05월 25일 오후 7시 20분 20초">
                 23 분전
             </time>
         </td>
