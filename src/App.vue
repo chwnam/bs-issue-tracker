@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <issue-detail v-if="viewDetail" />
+    <issue-detail v-if="current" />
     <issue-list 
       v-else 
       v-bind:data="issueList" 
@@ -11,6 +11,9 @@
 </template>
 
 <script>
+
+import router from './routes'
+
 //Models
 import IssueListModel from './Models/IssueListModel';
 
@@ -19,6 +22,7 @@ import IssueList from './pages/IssueList'
 import IssueDetail from './pages/IssueDetail'
 
 export default {
+  router,
   name: 'App',
   components: {
     IssueList,
@@ -27,9 +31,13 @@ export default {
   data() {
     return {
       issueList: [],
-      viewDetail : false,
       openIssueCount: null,
       closeIssueCount: null
+    }
+  },
+  computed: {
+    current: function() {
+      return this.$route.params.id
     }
   },
   created() {

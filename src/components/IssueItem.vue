@@ -6,7 +6,7 @@
           {{item.id}}
         </td>
         <td>
-          <a href="#">{{item.title}}</a>
+          <router-link :to="'/'+item.id">{{item.title}}</router-link>
         </td>
         <td>
           {{item.date}}
@@ -24,7 +24,10 @@
 
 <script>
 
+import router from '../routes'
+
 export default {
+  router,
   name: 'IssueList',
   props: {
     data: Array,

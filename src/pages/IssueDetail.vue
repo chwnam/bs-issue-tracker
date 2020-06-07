@@ -1,6 +1,6 @@
 <template>
   <div>
-    detail
+    Issue ID :  {{current}}
   </div>
 </template>
 
@@ -10,6 +10,11 @@ export default {
   data() {
     return {
       
+    }
+  },
+  computed: {
+    current: function() {
+      return this.$route.params.id
     }
   }
 }
