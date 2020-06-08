@@ -12,9 +12,6 @@
             {{item.date}}
           </td>
           <td>
-            {{item.modified}}
-          </td>
-          <td>
             {{item.status}}
           </td>
         </template>

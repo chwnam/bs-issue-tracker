@@ -11,7 +11,6 @@
           <th>ID</th>
           <th>Title</th>
           <th>Created Date</th>
-          <th>Modified Date</th>
           <th>Status</th>
         </tr>
       </thead>
