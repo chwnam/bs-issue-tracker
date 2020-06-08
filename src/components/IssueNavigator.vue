@@ -7,7 +7,7 @@
       </button>
     </li>
     <li>
-      <button type="button">New Issue</button>
+      <button type="button" @click="onClickNewIssue">New Issue</button>
     </li>
   </ul>
 </template>
@@ -29,6 +29,9 @@ export default {
   methods: {
     onClickTab(tab){
       EventBus.$emit('onClickTab', tab);
+    },
+    onClickNewIssue(){
+      EventBus.$emit('onClickNewIssue')
     },
     count(tab) {
       if(tab === 'open'){
