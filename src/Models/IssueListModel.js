@@ -46,7 +46,7 @@ export default {
     return new Promise(res => {
       setTimeout(()=> {
         res(data)
-      }, 200);
+      }, 0);
     })
   }
 }

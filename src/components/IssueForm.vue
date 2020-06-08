@@ -1,5 +1,5 @@
 <template>
-  <form ref="form" @submit.prevent="onSubmitForm" action="">
+  <form ref="form" @submit.prevent="onSubmitForm">
     <p v-if="failValid"><strong style="color:red">다 입력해야해요!</strong></p>
     <p>
       <label>
@@ -41,13 +41,12 @@ import EventBus from '../EventBus'
 
 export default {
   name: 'IssueForm',
-  props: {
-    categories: Array
-  },
+  props: ["edit", "categories", "singleData"],
   data() {
     return {
       failValid: false,
       category: '',
+      id: '',
       formValues: {
         categories: [],
         author: '',
@@ -58,7 +57,7 @@ export default {
     }
   },
   computed: {
-    validation: function() {
+    validation() {
       return {
         category: this.formValues.categories.length,
         author: this.formValues.author.trim(),
@@ -66,7 +65,7 @@ export default {
         content: this.formValues.content.trim(),
       }
     },
-    isValid: function () {
+    isValid() {
       const validation = this.validation;
       return Object.keys(validation).every(function(key) {
         return validation[key]
@@ -78,6 +77,14 @@ export default {
       this.formValues.categories = [];
       let arr = this.formValues.categories.concat(this.category)
       this.formValues.categories = arr
+    },
+    singleData() {
+      this.bindSingleData()
+    }
+  },
+  created() {
+    if(this.singleData){
+      this.bindSingleData()
     }
   },
   methods: {
@@ -86,6 +93,7 @@ export default {
         this.createdDate = new Date();
 
         const formData = {
+          "id": this.id,
           "title": this.formValues.title,
           "author": this.formValues.author,
           "date": this.createdDate,
@@ -100,8 +108,18 @@ export default {
         this.failValid = true
       }
     },
+    bindSingleData() {
+      const arr = this.singleData
+
+      this.id = arr.id
+      this.formValues.categories = arr.categories
+      this.formValues.author = arr.author
+      this.formValues.title = arr.title
+      this.formValues.content = arr.content
+      this.createdDate = arr.createdDate
+    },
     resetForm() {
-      this.formValues.category = ''
+      this.formValues.categories = ''
       this.formValues.author = ''
       this.formValues.title = ''
       this.formValues.content = ''

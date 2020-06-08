@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-    <issue-single 
-      v-if="current" 
-      v-bind:data="issueSingleData"
-      v-bind:categories="issueCategoriesData"
-    />
     <issue-list 
-      v-else 
+      v-if="isHome" 
       v-bind:data="issueListData" 
       v-bind:openIssueCount="openIssueCount"
       v-bind:closeIssueCount="closeIssueCount"
+    />
+    <issue-single 
+      v-else 
+      :edit=edit
+      v-bind:data="issueSingleData"
+      v-bind:categories="issueCategoriesData"
     />
   </div>
 </template>
@@ -36,7 +37,7 @@ export default {
   },
   data() {
     return {
-      editorial: false, // 편집환경인지 아닌지
+      edit: false, // 편집환경인지 아닌지
       issueListData: [],
       issueSingleData: [],
       issueCategoriesData: [],
@@ -46,13 +47,18 @@ export default {
     }
   },
   computed: {
+    isHome: function() {
+      return this.$route.path === '/'
+    },
     current: function() {
       return this.$route.params.id
     }
   },
   watch: {
     $route (){
-      this.issueSingleData = []
+      if(this.current){
+        this.IssueSingleFetch(this.current)
+      }
     }
   },
   created() {
@@ -63,30 +69,44 @@ export default {
       this.IssueSingleFetch(this.current)
     })
     EventBus.$on('onClickModify', () => {
-      console.log('EventBus $on onClickModify')
+      this.edit = true
     })
     EventBus.$on('onClickRemove', () => {
       let boolean = confirm('Are You Sure?')
 
       if(boolean){
         this.issueListData.splice(this.singleDataIndexlocated, 1)
-        this.$router.push('/');
+        this.$router.replace('/');
       }
     })
     EventBus.$on('onChangeStatus', (v) => {
       this.issueListData[this.singleDataIndexlocated].status = v
-      //console.log(this.issueListData[this.singleDataIndexlocated].status, v)
     })
     EventBus.$on('onClickNewIssue', () => {
-      this.$router.push('/new');
+      this.$router.replace('/new');
     })
     EventBus.$on('onSubmitForm', (formData) => {
       let obj = formData
-      obj.id = Date.now() // 아이디값 임의로 생성. 이는 백엔드에서 처리할 예정
-      let arr = this.issueListData.concat(obj)
-      this.issueListData = arr
 
-      alert('새로운 이슈가 추가되었습니다')
+      if(!obj.id){  // 새로 생성된 게시글에 한해 아이디값 임의로 생성. 이는 백엔드에서 처리할 예정
+        obj.id = Date.now()
+        let arr = this.issueListData.concat(obj)
+        this.issueListData = arr
+      }else {
+        let arr = this.issueListData;
+
+        let i = 0;
+        arr.some(el => {
+          if (Number(el.id) === Number(obj.id)) {
+            arr.splice(i, 1, obj)
+            //arr.splice(i, 0, obj);
+            this.issueListData = arr
+          }
+          i++
+        });
+        i = 0
+      }
+      this.edit = false
       this.$router.push('/');
     })
   },

@@ -9,6 +9,5 @@ export default new VueRouter({
     { path: '/' },
     { path: '/:id' },
     { path: '/new' },
-    { path: '/edit' }
   ]
 })
