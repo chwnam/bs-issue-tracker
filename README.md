@@ -19,7 +19,7 @@ npm run serve
 ### 일회용 실행
 
 ```
-npx npx vue-cli-service serve
+npx run vue-cli-service serve
 ```
 
 ## 기능정의
