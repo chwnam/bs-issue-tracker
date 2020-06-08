@@ -15,7 +15,7 @@
           <th>Status</th>
         </tr>
       </thead>
-      <issue-item v-bind:data="data" v-bind:visibleItem="selectedTab" />
+      <issue-items v-bind:data="data" v-bind:visibleItem="selectedTab" />
     </table>
   </div>
 </template>
@@ -25,13 +25,13 @@
 import EventBus from '../EventBus'
 
 import IssueNavigator from '../components/IssueNavigator'
-import IssueItem from '../components/IssueItem'
+import IssueItems from '../components/IssueItems'
 
 export default {
   name: 'IssueList',
   components: {
     IssueNavigator,
-    IssueItem
+    IssueItems
   },
   props: {
     data: Array,
