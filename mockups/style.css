@@ -1,0 +1,111 @@
+.article-header {
+    width: 980px;
+    margin: 10px auto;
+
+}
+
+.article-inner {
+    width: 980px;
+    margin: 10px auto;
+}
+
+.human-time {
+    text-decoration: dotted underline;
+    cursor: pointer;
+}
+
+.button {
+    color: #24292e;
+    cursor: pointer;
+    background-color: #eff3f6;
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+    background-repeat: repeat-x;
+    background-position: -1px -1px;
+    background-size: 110% 110%;
+    border: 1px solid rgba(27, 31, 35, 0.2);
+    border-radius: .25em;
+    display: inline-block;
+    font-weight: 600;
+    position: relative;
+    white-space: nowrap;
+}
+
+.button-small {
+    padding: 3px 10px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+#issues-toolbar {
+    margin: 10px 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#issues-toolbar > li {
+    display: inline-block;
+}
+
+#issues-toolbar > li:not(:first-child):not(:last-child) {
+    margin: 0 10px;
+}
+
+.bs-list-table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bs-list-table > thead > tr > th {
+    text-align: left;
+}
+
+.bs-list-table > thead > tr > th, td {
+    padding: 5px 12px;
+    line-height: 1.6em;
+}
+
+.bs-list-table .column-ID {
+    width: 10%;
+}
+
+.bs-list-table .column-title {
+    width: 30%;
+}
+
+.bs-list-table .column-author {
+    width: 15%;
+}
+
+.bs-list-table .column-created {
+    width: 15%;
+}
+
+.bs-list-table .column-modified {
+    width: 15%;
+}
+
+.bs-list-table .column-status {
+    width: 15%;
+}
+
+.bs-list-table.striped > tbody > tr:nth-child(2n) {
+    background-color: #eff3f6;
+}
+
+.issue-entry {
+    float: left;
+}
+
+aside.sidebar {
+    float: left;
+}
+
+.entry-content:after {
+    clear:both;
+    display: block;
+}
+
+aside.sidebar > ul  {
+    list-style-type: none;
+}

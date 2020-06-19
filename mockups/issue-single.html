@@ -4,49 +4,73 @@
     <meta charset="UTF-8">
     <title>백석 이슈 트래커 싱글</title>
     <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="">
+<main id="site-content" role="main">
+    <article id="issue-single-page" class="main-article">
+        <header class="article-header">
+            <h1>백석 이슈 트래커 싱글</h1>
+        </header>
+        <div class="article-inner">
+            <div class="entry-content">
+                <h2>이슈 #1</h2>
+                <div class="issue-entry">
+                    <div id="issue-properties">
+                        <dl>
+                            <dt>작성자</dt>
+                            <dd>홍길동</dd>
 
-<header>
-    <h1>백석 이슈 트래커</h1>
-</header>
+                            <dt>생성일</dt>
+                            <dd>
+                                <time
+                                        class="human-time"
+                                        datetime="2020-05-25T19:20:20+0900"
+                                        title="2020년 05월 25일 오후 7시 20분 20초"
+                                >
+                                    23 분전
+                                </time>
+                            </dd>
 
-<main role="main">
-    <article>
-        <h2>이슈 #1</h2>
-        <dl>
-            <dt>작성자</dt>
-            <dd>홍길동</dd>
-            <dt>생성일</dt>
-            <dd>---</dd>
-            <dt>수정일</dt>
-            <dd>---</dd>
-            <dt>수정일</dt>
-            <dd>---</dd>
-            <dt>이슈 종류</dt>
-            <dd>---</dd>
-            <dt>상태</dt>
-            <dd>---</dd>
-        </dl>
-        <div id="content">
-            <p>콘텐트</p>
-            <p>Lorem Ipsum</p>
+                            <dt>수정일</dt>
+                            <dd>
+                                <time
+                                        class="human-time"
+                                        datetime="2020-05-25T19:20:20+0900"
+                                        title="2020년 05월 25일 오후 7시 20분 20초"
+                                >
+                                    23 분전
+                                </time>
+                            </dd>
+                            <dt>상태</dt>
+                            <dd>열림</dd>
+                        </dl>
+                    </div>
+                    <div id="content">
+                        <p>콘텐트</p>
+                        <p>Lorem Ipsum</p>
+                    </div>
+                </div>
+                <aside class="sidebar">
+                    <ul>
+                        <li>
+                            <button class="button button-small" onclick="window.location.href='issue-edit.html';">수정
+                            </button>
+                        </li>
+                        <li>
+                            <button class="button button-small" onclick="if(confirm('삭제할까요?'))alert('삭제했다칩시다!');">제거
+                            </button>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="">
+                            <label for="">닫힘 처리</label>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
         </div>
+
     </article>
-    <aside>
-        <ul>
-            <li>
-                <button onclick="window.location.href='issue-edit.html';">수정</button>
-            </li>
-            <li>
-                <button onclick="if(confirm('삭제할까요?'))alert('삭제했다칩시다!');">제거</button>
-            </li>
-            <li>
-                <input type="checkbox" id="">
-                <label for="">닫힘 처리</label>
-            </li>
-        </ul>
-    </aside>
 </main>
 
 <footer>

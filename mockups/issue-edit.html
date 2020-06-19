@@ -4,52 +4,55 @@
     <meta charset="UTF-8">
     <title>백석 이슈 트래커 싱글</title>
     <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-<header>
-    <h1>백석 이슈 트래커</h1>
-</header>
-
-<main role="main">
-    <article>
-        <h2>이슈 #1 수정 / 새 이슈 작성</h2>
-        <dl>
-            <dt>작성자</dt>
-            <dd>홍길동</dd>
-            <dt>생성일</dt>
-            <dd>---</dd>
-            <dt>수정일</dt>
-            <dd>---</dd>
-            <dt>수정일</dt>
-            <dd>---</dd>
-            <dt>이슈 종류</dt>
-            <dd>---</dd>
-            <dt>상태</dt>
-            <dd>---</dd>
-        </dl>
-        <div id="content">
-            <textarea></textarea>
-        </div>
+<body class="">
+<main id="site-content" role="main">
+    <article class="article-header">
+        <h1>백석 이슈 트래커 편집</h1>
     </article>
-    <aside>
-        <ul>
-            <li>
-                <button onclick="alert('수정됐다 칩시다!'); window.location.href='issues-list.html';">작성 완료</button>
-            </li>
-            <li>
-                <button onclick="window.location.href='issues-list.html';">취소</button>
-            </li>
-            <li>
-                <input type="checkbox" id="">
-                <label for="">닫힘 처리</label>
-            </li>
-        </ul>
-    </aside>
+    <div class="article-inner">
+        <div class="entry-content">
+            <h2>이슈 #1 수정 / 새 이슈 작성</h2>
+            <div class="issue-entry">
+                <div id="issue-properties">
+                    <dl>
+                        <dt>작성자</dt>
+                        <dd>홍길동</dd>
+                        <dt>생성일</dt>
+                        <dd>---</dd>
+                        <dt>수정일</dt>
+                        <dd>---</dd>
+                        <dt>수정일</dt>
+                        <dd>---</dd>
+                        <dt>이슈 종류</dt>
+                        <dd>---</dd>
+                        <dt>상태</dt>
+                        <dd>---</dd>
+                    </dl>
+                </div>
+                <div id="content">
+                    <textarea rows="8" cols="20"></textarea>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <ul>
+                    <li>
+                        <button onclick="alert('수정됐다 칩시다!'); window.location.href='issues-list.html';">작성 완료</button>
+                    </li>
+                    <li>
+                        <button onclick="window.location.href='issues-list.html';">취소</button>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="">
+                        <label for="">닫힘 처리</label>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </div>
 </main>
-
 <footer>
 </footer>
-
 </body>
 </html>

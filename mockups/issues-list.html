@@ -4,59 +4,108 @@
     <meta charset="UTF-8">
     <title>이슈 트래커 목록 목업</title>
     <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<h1>이슈 트래커</h1>
-
-<section>
-    <button>
-        1 Open
-    </button>
-    <button>
-        2 Closed
-    </button>
-    <button onclick="location.href='issue-edit.html';">
-        New Issue
-    </button>
-</section>
-
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>TITLE</th>
-        <th>Author</th>
-        <th>CREATED</th>
-        <th>MODIFIED</th>
-        <th>STATUS</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>
-            1
-        </td>
-        <td>
-            <a href="issue-single.html">TEST</a>
-        </td>
-        <td>
-            홍길동
-        </td>
-        <td>
-            <time datetime="2020-05-25T19:20:20+0900" title="2020년 05월 25일 오후 7시 20분 20초">
-                23 분전
-            </time>
-        </td>
-        <td>
-            <time datetime="2020-05-25T19:20:20+0900" title="2020년 05월 25일 오후 7시 20분 20초">
-                23 분전
-            </time>
-        </td>
-        <td>
-            진행중
-        </td>
-    </tr>
-    </tbody>
-</table>
+<body class="">
+<main id="site-content" role="main">
+    <article id="issues-list-page" class="main-article">
+        <header class="article-header">
+            <h1>백석 이슈 트래커 목록</h1>
+            <ul id="issues-toolbar">
+                <li>
+                    <button class="button button-small">1 Open</button>
+                </li>
+                <li>
+                    <button class="button button-small">2 Closed</button>
+                </li>
+                <li>
+                    <button  class="button button-small" onclick="location.href='issue-edit.html';">New Issue</button>
+                </li>
+            </ul>
+        </header>
+        <div class="article-inner">
+            <div class="entry-content">
+                <table id="issues-list-table" class="bs-list-table striped">
+                    <thead>
+                    <tr>
+                        <th class="column-ID">ID</th>
+                        <th class="column-title">TITLE</th>
+                        <th class="column-author">Author</th>
+                        <th class="column-created">CREATED</th>
+                        <th class="column-modified">MODIFIED</th>
+                        <th class="column-status">STATUS</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="column-ID">
+                            2
+                        </td>
+                        <td class="column-ID">
+                            <a href="issue-single.html">TEST 2</a>
+                        </td>
+                        <td class="column-ID">
+                            홍길동
+                        </td>
+                        <td class="column-ID">
+                            <time
+                                    class="human-time"
+                                    datetime="2020-05-25T19:20:20+0900"
+                                    title="2020년 05월 25일 오후 7시 20분 20초"
+                            >
+                                23 분전
+                            </time>
+                        </td>
+                        <td class="column-ID">
+                            <time
+                                    class="human-time"
+                                    datetime="2020-05-25T19:20:20+0900"
+                                    title="2020년 05월 25일 오후 7시 20분 20초"
+                            >
+                                23 분전
+                            </time>
+                        </td>
+                        <td class="column-ID">
+                            진행중
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="column-ID">
+                            1
+                        </td>
+                        <td class="column-ID">
+                            <a href="issue-single.html">TEST 1</a>
+                        </td>
+                        <td class="column-ID">
+                            홍길동
+                        </td>
+                        <td class="column-ID">
+                            <time
+                                    class="human-time"
+                                    datetime="2020-05-25T19:20:20+0900"
+                                    title="2020년 05월 25일 오후 7시 20분 20초"
+                            >
+                                3일 전
+                            </time>
+                        </td>
+                        <td class="column-ID">
+                            <time
+                                    class="human-time"
+                                    datetime="2020-05-25T19:20:20+0900"
+                                    title="2020년 05월 25일 오후 7시 20분 20초"
+                            >
+                                2일 전
+                            </time>
+                        </td>
+                        <td class="column-ID">
+                            진행중
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </article>
+</main>
 </body>
 </html>
