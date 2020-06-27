@@ -6,7 +6,7 @@ function issue_custom_post_type() {
 	$labels = array(
 		'name'                  => _x( 'Issues', 'Post Type General Name', 'text_domain' ),
 		'singular_name'         => _x( 'Issue', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'             => __( 'Issue Types', 'text_domain' ),
+		'menu_name'             => __( 'Issues', 'text_domain' ),
 		'name_admin_bar'        => __( 'Issues', 'text_domain' ),
 		'archives'              => __( 'Issue Archives', 'text_domain' ),
 		'attributes'            => __( 'Issue Attributes', 'text_domain' ),
