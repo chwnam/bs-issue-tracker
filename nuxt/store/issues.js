@@ -19,7 +19,6 @@ export const state = () => ({
 export const mutations = {
   setStateViewCategory (state, payload) {
     state.viewCategory = payload;
-    console.log(payload)
   },
   setStateIssue (state, payload) {
     state.issue = payload
