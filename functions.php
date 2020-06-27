@@ -26,3 +26,20 @@ add_action( 'wp_enqueue_scripts', 'bs_enqueue_scripts', 1 );
  */
 require get_stylesheet_directory() . '/models/issue.php';
 
+
+/**
+ * Register a issue post type, with REST API support
+ *
+ * Based on example at: https://codex.wordpress.org/Function_Reference/register_post_type
+ */
+
+add_action( 'init', 'issue_cpt' );
+
+function issue_cpt() {
+    $args = array(
+      'public'       => true,
+      'show_in_rest' => true,
+      'label'        => 'Issues'
+    );
+    register_post_type( 'issue', $args );
+}
