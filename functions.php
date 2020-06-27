@@ -20,3 +20,9 @@ function bs_enqueue_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'bs_enqueue_scripts', 1 );
+
+/**
+ * Register Custom Post Type
+ */
+require get_stylesheet_directory() . '/models/issue.php';
+
