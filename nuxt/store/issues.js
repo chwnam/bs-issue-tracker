@@ -53,8 +53,6 @@ export const actions = {
     try {
       let res = await this.$axios.get(`/v2/categories`);
       commit('setStateCategories', res.data);
-
-      console.log(res.data)
     } catch(err) {
         console.log(err)
     }
