@@ -1,4 +1,17 @@
-/* COMMON */
+/*
+File Name: style.css
+* SUMMARY:
+*     1) COMMON
+*     2) LIST
+*     3) SINGLE
+*     4) FORM
+*
+*/
+
+/* **************************************** *
+ * COMMON
+ * **************************************** */
+
 .article-header {
     width: 980px;
     margin: 10px auto;
@@ -14,7 +27,12 @@
     cursor: pointer;
 }
 
-/* LIST */
+/* **************************************** *
+ * LIST
+ * **************************************** */
+
+/* Issues Toolbar */
+
 #issues-toolbar {
     margin: 10px 0;
     padding: 0;
@@ -30,6 +48,7 @@
     margin: 0 10px;
 }
 
+/* Issues Table */
 
 .bs-list-table {
     margin-top: 20px;
@@ -94,9 +113,14 @@
     text-decoration: underline;
 }
 
-/* SINGLE */
+/* **************************************** *
+ * SINGLE
+ * **************************************** */
 
-/* FORM */
+/* **************************************** *
+ * FORM
+ * **************************************** */
+
 .button {
     color: #24292e;
     cursor: pointer;
