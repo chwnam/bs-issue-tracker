@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
     <title>백석 이슈 트래커 싱글</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="../assets/css/normalize.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,32 +19,38 @@
                 <div class="issue-entry">
                     <div id="issue-properties">
                         <dl>
-                            <dt>작성자</dt>
-                            <dd>홍길동</dd>
-
-                            <dt>생성일</dt>
-                            <dd>
-                                <time
-                                        class="human-time"
-                                        datetime="2020-05-25T19:20:20+0900"
-                                        title="2020년 05월 25일 오후 7시 20분 20초"
-                                >
-                                    23 분전
-                                </time>
-                            </dd>
-
-                            <dt>수정일</dt>
-                            <dd>
-                                <time
-                                        class="human-time"
-                                        datetime="2020-05-25T19:20:20+0900"
-                                        title="2020년 05월 25일 오후 7시 20분 20초"
-                                >
-                                    23 분전
-                                </time>
-                            </dd>
-                            <dt>상태</dt>
-                            <dd>열림</dd>
+                            <div>
+                                <dt>작성자</dt>
+                                <dd>홍길동</dd>
+                            </div>
+                            <div>
+                                <dt>생성일</dt>
+                                <dd>
+                                    <time
+                                            class="human-time"
+                                            datetime="2020-05-25T19:20:20+0900"
+                                            title="2020년 05월 25일 오후 7시 20분 20초"
+                                    >
+                                        23 분전
+                                    </time>
+                                </dd>
+                            </div>
+                            <div>
+                                <dt>수정일</dt>
+                                <dd>
+                                    <time
+                                            class="human-time"
+                                            datetime="2020-05-25T19:20:20+0900"
+                                            title="2020년 05월 25일 오후 7시 20분 20초"
+                                    >
+                                        23 분전
+                                    </time>
+                                </dd>
+                            </div>
+                            <div>
+                                <dt>상태</dt>
+                                <dd>열림</dd>
+                            </div>
                         </dl>
                     </div>
                     <div id="content">
@@ -52,24 +59,28 @@
                     </div>
                 </div>
                 <aside class="sidebar">
-                    <ul>
-                        <li>
-                            <button class="button button-small" onclick="window.location.href='issue-edit.html';">수정
-                            </button>
-                        </li>
-                        <li>
-                            <button class="button button-small" onclick="if(confirm('삭제할까요?'))alert('삭제했다칩시다!');">제거
-                            </button>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="">
-                            <label for="">닫힘 처리</label>
-                        </li>
-                    </ul>
+                    <div class="widget status-widget">
+                        <h3 class="widget-title">이슈 상태</h3>
+                        <ul>
+                            <li>
+                                <button class="button button-small" onclick="window.location.href='issue-edit.html';">
+                                    수정
+                                </button>
+                            </li>
+                            <li>
+                                <button class="button button-small" onclick="if(confirm('삭제할까요?'))alert('삭제했다칩시다!');">
+                                    제거
+                                </button>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="">
+                                <label for="">닫힘 처리</label>
+                            </li>
+                        </ul>
+                    </div>
                 </aside>
             </div>
         </div>
-
     </article>
 </main>
 

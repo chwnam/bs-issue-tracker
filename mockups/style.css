@@ -1,16 +1,21 @@
 /*
 File Name: style.css
-* SUMMARY:
-*     1) COMMON
-*     2) LIST
-*     3) SINGLE
-*     4) FORM
-*
+SUMMARY:
+ 1) COMMON
+ 2) LIST
+ 3) SINGLE
+ 4) FORM
+ 5) WIDGETS
 */
 
 /* **************************************** *
  * COMMON
  * **************************************** */
+
+.main-article {
+    width: 100%;
+    min-width: 1030px;
+}
 
 .article-header {
     width: 980px;
@@ -20,6 +25,12 @@ File Name: style.css
 .article-inner {
     width: 980px;
     margin: 10px auto;
+}
+
+.entry-content:after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .human-time {
@@ -108,14 +119,47 @@ File Name: style.css
 }
 
 .bs-list-table a:hover,
-.bs-list-table a:focus
-{
+.bs-list-table a:focus {
     text-decoration: underline;
 }
 
 /* **************************************** *
  * SINGLE
  * **************************************** */
+#issue-properties dt {
+    display: inline-block;
+    min-width: 3em;
+    font-weight: 600;
+}
+
+#issue-properties dd {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#issue-properties > dl > div {
+    float: left;
+}
+
+#issue-properties > dl > div:nth-child(n+2) {
+    margin-left: 30px;
+}
+
+#issue-properties > dl:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.issue-entry {
+    float: left;
+    width: 75%;
+}
+
+aside.sidebar {
+    float: left;
+    width: 25%;
+}
 
 /* **************************************** *
  * FORM
@@ -143,20 +187,28 @@ File Name: style.css
     line-height: 20px;
 }
 
-
-.issue-entry {
-    float: left;
+/* **************************************** *
+ * 5) WIDGETS
+ * **************************************** */
+.widget {
+    padding: 12px;
+    margin: 0 5px 20px;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    background-color: #eff3f6;
 }
 
-aside.sidebar {
-    float: left;
+.widget > .widget-title {
+    margin: 10px 0;
+    font-size: 18px;
 }
 
-.entry-content:after {
-    clear: both;
-    display: block;
-}
-
-aside.sidebar > ul {
+.widget ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.widget li {
+    margin: 10px 0;
 }
