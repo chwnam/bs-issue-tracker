@@ -1,7 +1,7 @@
+/* COMMON */
 .article-header {
     width: 980px;
     margin: 10px auto;
-
 }
 
 .article-inner {
@@ -14,31 +14,11 @@
     cursor: pointer;
 }
 
-.button {
-    color: #24292e;
-    cursor: pointer;
-    background-color: #eff3f6;
-    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
-    background-repeat: repeat-x;
-    background-position: -1px -1px;
-    background-size: 110% 110%;
-    border: 1px solid rgba(27, 31, 35, 0.2);
-    border-radius: .25em;
-    display: inline-block;
-    font-weight: 600;
-    position: relative;
-    white-space: nowrap;
-}
-
-.button-small {
-    padding: 3px 10px;
-    font-size: 12px;
-    line-height: 20px;
-}
-
+/* LIST */
 #issues-toolbar {
     margin: 10px 0;
     padding: 0;
+    font-size: 0;
     list-style-type: none;
 }
 
@@ -50,6 +30,7 @@
     margin: 0 10px;
 }
 
+
 .bs-list-table {
     margin-top: 20px;
     width: 100%;
@@ -60,8 +41,17 @@
     text-align: left;
 }
 
+.bs-list-table > thead > tr > th {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.bs-list-table > tbody > tr > td {
+    border-bottom: 1px solid #d0d0d0;
+}
+
 .bs-list-table > thead > tr > th, td {
-    padding: 5px 12px;
+    padding: 13px 0 11px 15px;
     line-height: 1.6em;
 }
 
@@ -89,9 +79,46 @@
     width: 15%;
 }
 
-.bs-list-table.striped > tbody > tr:nth-child(2n) {
+.bs-list-table.striped > tbody > tr:hover {
     background-color: #eff3f6;
 }
+
+.bs-list-table a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.bs-list-table a:hover,
+.bs-list-table a:focus
+{
+    text-decoration: underline;
+}
+
+/* SINGLE */
+
+/* FORM */
+.button {
+    color: #24292e;
+    cursor: pointer;
+    background-color: #eff3f6;
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+    background-repeat: repeat-x;
+    background-position: -1px -1px;
+    background-size: 110% 110%;
+    border: 1px solid rgba(27, 31, 35, 0.2);
+    border-radius: .25em;
+    display: inline-block;
+    font-weight: 600;
+    position: relative;
+    white-space: nowrap;
+}
+
+.button-small {
+    padding: 3px 10px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
 
 .issue-entry {
     float: left;
@@ -102,10 +129,10 @@ aside.sidebar {
 }
 
 .entry-content:after {
-    clear:both;
+    clear: both;
     display: block;
 }
 
-aside.sidebar > ul  {
+aside.sidebar > ul {
     list-style-type: none;
 }
