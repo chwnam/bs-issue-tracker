@@ -21,7 +21,24 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      {
+        hid: 'desc',
+        name: 'description',
+        content: '학습용 이슈 트래커'
+      },
+      {
+        hid: 'ogtitle',
+        name: 'og:title',
+        content: 'BS Issue Tracker',
+      }, {
+        hid: 'ogdesc',
+        name: 'og:description',
+        content: '학습용 이슈 트래커',
+      }, {
+        hid: 'ogtype',
+        property: 'og:type',
+        content: 'website',
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
