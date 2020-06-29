@@ -51,7 +51,7 @@ function bs_register_post_type() {
 		'description'         => __( '이슈 Post Type', 'bs' ),
 		'labels'              => $labels,
 		'supports'            => [ 'title', 'editor', 'author' ],
-		'taxonomies'          => array('milestones_categories'),
+		'taxonomies'          => array('milestones'),
 		'hierarchical'        => false,
 		'public'              => true,
 		'menu_position'       => 5,
@@ -73,7 +73,7 @@ add_action( 'init', 'bs_register_post_type' );
 
 function milestone_taxonomy() {
 	register_taxonomy(
-			'milestones_categories',
+			'milestones',
 			'issue',
 			array(
 					'hierarchical' => false,
