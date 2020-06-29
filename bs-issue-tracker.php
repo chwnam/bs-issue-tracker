@@ -82,7 +82,8 @@ function milestone_taxonomy() {
 					'rewrite' => array(
 							'slug' => 'milestones',
 							'with_front' => false  // Don't display the category base before
-					)
+					),
+					'show_in_rest' => true,
 			)
 	);
 }
