@@ -50,8 +50,8 @@ function bs_register_post_type() {
 		'label'               => __( '이슈', 'bs' ),
 		'description'         => __( '이슈 Post Type', 'bs' ),
 		'labels'              => $labels,
-		'supports'            => [ 'title', 'editor' ],
-		'taxonomies'          => [ 'category', 'post_tag' ],
+		'supports'            => [ 'title', 'editor', 'author' ],
+		'taxonomies'          => array('milestones_categories'),
 		'hierarchical'        => false,
 		'public'              => true,
 		'menu_position'       => 5,
@@ -67,3 +67,23 @@ function bs_register_post_type() {
 }
 
 add_action( 'init', 'bs_register_post_type' );
+
+
+//milestone Texomomy
+
+function milestone_taxonomy() {
+	register_taxonomy(
+			'milestones_categories',
+			'issue',
+			array(
+					'hierarchical' => false,
+					'label' => '마일스톤',
+					'query_var' => true,
+					'rewrite' => array(
+							'slug' => 'milestones',
+							'with_front' => false  // Don't display the category base before
+					)
+			)
+	);
+}
+add_action( 'init', 'milestone_taxonomy');
